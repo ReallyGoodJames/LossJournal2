@@ -1,11 +1,11 @@
 {
   "name": "Grief Journal",
-  "short_name": "GriefJournal",
+  "short_name": "Mom",
   "start_url": "/",
   "scope": "/",
   "id": "/",
   "display": "standalone",
-  "background_color": "#128c7e",
+  "background_color": "#f5f5f5",
   "theme_color": "#128c7e",
   "description": "A private journal to remember your loved one",
   "dir": "ltr",
@@ -13,10 +13,34 @@
   "orientation": "portrait",
   "icons": [
     {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "icons/icon-512.png",
@@ -28,7 +52,7 @@
   "screenshots": [],
   "categories": ["lifestyle", "health"],
   "launch_handler": {
-    "client_mode": "auto"
+    "client_mode": "focus-existing"
   },
   "prefer_related_applications": false,
   "related_applications": []
