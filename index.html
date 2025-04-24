@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Mom</h1>
+    <div id="chat">
+      <div id="messages"></div>
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+        <button id="add-media-button">➕ Add Media</button>
+        <input type="file" id="media-input" accept="image/*,video/*,audio/*" multiple style="display:none">
+      </div>
+    </div>
+    <div class="tools">
+      <button id="export-button">Export Data (ZIP)</button>
+      <input type="file" id="import-input" accept=".zip" style="display:none">
+      <button id="import-button">Import Data</button>
+      <button id="reset-button">Reset All</button>
+    </div>
+  </div>
+
+  <!-- Media Modal -->
+  <div id="media-modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modal-image" style="display:none">
+      <video id="modal-video" controls style="display:none"></video>
+      <audio id="modal-audio" controls style="display:none"></audio>
+    </div>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
