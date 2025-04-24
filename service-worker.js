@@ -1,12 +1,18 @@
-const CACHE_NAME = 'grief-journal-v2';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+const CACHE_NAME = 'v3';
+const ASSETS = [
+  '/LossJournal2/',
+  '/LossJournal2/index.html',
+  '/LossJournal2/style.css',
+  '/LossJournal2/script.js',
+  '/LossJournal2/icons/icon-192.png'
 ];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(ASSETS))
+  );
+});
 
 // Install event - cache core assets
 self.addEventListener('install', (event) => {
