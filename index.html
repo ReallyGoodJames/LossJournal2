@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#128c7e">
+  <meta name="description" content="A private journal to remember your loved one">
+  
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  
   <title>Mom</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Your existing app content -->
   <div id="app">
     <h1>Mom</h1>
     <div id="chat">
@@ -40,6 +49,19 @@
   <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.error('SW registration failed:', err));
+      });
+    }
+  </script>
+  
+  <!-- Your main app script -->
   <script src="script.js"></script>
 </body>
 </html>
